@@ -4,13 +4,16 @@
 
 //this function handles the display of dog images in the DOM
 function displayResults(responseJson, breed) {
-  console.log(responseJson)
+  console.log(responseJson.message)
   if (responseJson.message === "Breed not found (master breed does not exist)") {
-        $('.results').append(`<h2>Breed not found; please try again.`);
+        $('.results').append(`<h2>Breed not found; please try again.`)
+    }
+    else if (responseJson.message === "Breed not found (sub breed does not exist)") {
+          $('.results').append(`<h2>Sub-breed not found; please try again.`)
     }
     else {
         $('.results').append(`<h2>Here's a picture of a ${breed}: </h2>
-        <img src="${responseJson.message}" class=results-img>`);
+        <img src="${responseJson.message}" class=results-img>`)
     }
 }
 
@@ -30,7 +33,7 @@ function submitForm() {
   $('.js-submit-button').on('click', function(event)  {
     event.preventDefault()
     let breed = $('input').val().toLowerCase()
-    // let dogBreed = encodeURI(breed)
+    // let updatedBreed = encodeURI(breed)
     console.log(breed)
     $('.results').empty()
     getDogImage(breed)

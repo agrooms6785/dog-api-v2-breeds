@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amanda's dog image generator</title>
+  <title>Amanda's dog breed image generator</title>
   <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h1>Amanda's dog breed image generator</h1>
       <fieldset>
-        <form>
-
-            <button type="button" name="button" class="js-submit-button">Click for dog pics!</button>
+        <form class="dog-form" name="input-value">
+          <legend>What's your favorite dog breed?</legend>
+          <input type="text" required name="fav-breed" placeholder="chihuahua"><br>
+          <input type="submit" for="input-value" class="js-submit-button" value="Click for dog pic!">
         </form>
       </fieldset>
       <section class="results">

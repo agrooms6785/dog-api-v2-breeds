@@ -30,7 +30,7 @@ function getDogImage(breed) {
 
 //this function handles the submit
 function submitForm() {
-  $('.js-submit-button').on('submit', function(event)  {
+  $('.js-submit-button').on('click', function(event)  {
     event.preventDefault()
     let breed = $('input').val().toLowerCase()
     // let updatedBreed = encodeURI(breed)
